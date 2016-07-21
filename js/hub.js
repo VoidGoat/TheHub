@@ -1,10 +1,14 @@
 var article = {
   "display": function(data, numArticles){
     for (var counter = 0; counter < numArticles; counter++) {
+      var articleBase = HTMLarticleBase.replace("%num%", counter);
       var title = HTMLnewsTitle.replace("%data%",data.data.children[counter].data.title);
-      title = title.replace("#",data.data.children[counter].data.url);
-      $("#news").append(HTMLarticleBase);
-      $("#news").append(title);
+      var link = HTMLnewsLink.replace("#",data.data.children[counter].data.url);
+      var subtext = HTMLnewsText.replace("%data%", "source: " + data.data.children[counter].data.domain);
+      $("#news").append(articleBase);
+      $("#article" + counter).append(title);
+      $("#article" + counter).append(link);
+      $("#article" + counter).append(subtext);
     }
     console.log(data);
   }
