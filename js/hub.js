@@ -13,7 +13,7 @@ var article = {
     console.log(data);
   }
 };
-
-$.getJSON("https://www.reddit.com/r/news/hot.json?limit=2", function(data) {
-        article.display(data, 2);
+var numArticles = 3;
+$.getJSON("https://www.reddit.com/r/news/hot.json?limit=" + numArticles, function(data) {
+        article.display(data, numArticles);
 });

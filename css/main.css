@@ -10,23 +10,37 @@ body {
 .text-bold {
   font-weight: 700;
 }
+.text-muted {
+  color:#7d97ad;
+}
+.section-header {
+  width: 95%;
+  margin: 0 auto;
+  animation: fadein-opacity 2s;
+}
+
+
 .news-article {
   border-style: solid;
   border-color: #2d3c49;
   border-width: 1px;
-  margin-top: 5px;
   padding-top: 5px;
   border-radius: 10px;
-  margin-left: 10px;
-  transition: opacity 2s;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 10px;
   opacity: 1;
-  animation: fadein 2s;
+  animation: fadein-location-opacity 1s;
+  transition: background-color 1s, color 1s;
+}
+.news-article:hover {
+  background-color: #7d97ad;
 }
 .article-title {
-  margin-left: 15px;
+  margin-left: 2.5%;
 }
 .article-text {
-  margin-left: 25px;
+  margin-left: 5%;
 }
 
 .article-link {
@@ -36,10 +50,28 @@ body {
   top:0;
   left: 0;
   z-index: 1;
+  transition: color 1s;
 }
-@keyframes fadein {
+
+.article-link: hover {
+  color: red;
+}
+
+@keyframes fadein-opacity {
   from { opacity: 0}
   to   { opacity: 1}
-  /*from { margin-left: -100px}
-  to   { margin-left: 10px}*/
+}
+@keyframes fadein-location {
+  from { margin-left: -100px}
+  to   { margin-left: 2.5%}
+  from { margin-right: 100px}
+  to   { margin-right: 0}
+}
+@keyframes fadein-location-opacity {
+  from { opacity: 0}
+  to   { opacity: 1}
+  from { margin-left: -100px}
+  to   { margin-left: 2.5%}
+  from { margin-right: 100px}
+  to   { margin-right: 0}
 }
