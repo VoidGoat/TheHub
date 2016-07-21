@@ -10,10 +10,24 @@ var article = {
       $("#article" + counter).append(link);
       $("#article" + counter).append(subtext);
     }
-    console.log(data);
   }
 };
 var numArticles = 3;
-$.getJSON("https://www.reddit.com/r/news/hot.json?limit=" + numArticles, function(data) {
+var subreddit = "tech";
+var redditLink = "https://www.reddit.com/r/%sub%/hot.json?limit=" + numArticles;
+redditLink = redditLink.replace("%sub%", subreddit);
+$.getJSON(redditLink, function(data) {
         article.display(data, numArticles);
+});
+
+var weather = {
+  "display": function(data) {
+    var temp = HTMLweatherTemp.replace('%data%',Math.ceil(kToF(data.main.temp)) + '° in Urbana'  );
+    $("#weather").append(temp);
+
+  }
+};
+
+$.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Urbana,us&appid=7e23f882df706f7ae4ab39bf593ec890', function(data) {
+        weather.display(data);
 });

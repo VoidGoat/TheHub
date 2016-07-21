@@ -30,7 +30,7 @@ body {
   margin-left: 2.5%;
   margin-top: 10px;
   opacity: 1;
-  animation: fadein-location-opacity 1s;
+  animation: fadein-location 1s, fadein-opacity 1s;
   transition: background-color 1s, color 1s;
 }
 .news-article:hover {
@@ -53,8 +53,18 @@ body {
   transition: color 1s;
 }
 
-.article-link: hover {
-  color: red;
+.temperature {
+  font-size: 45px;
+  animation: fadein-opacity 2s;
+  margin-left: 45%;
+  margin-right: 55%;
+  text-align: center;
+  text
+
+}
+
+#weather{
+  display: flex;
 }
 
 @keyframes fadein-opacity {
@@ -62,16 +72,6 @@ body {
   to   { opacity: 1}
 }
 @keyframes fadein-location {
-  from { margin-left: -100px}
+  from { margin-left: -50%}
   to   { margin-left: 2.5%}
-  from { margin-right: 100px}
-  to   { margin-right: 0}
-}
-@keyframes fadein-location-opacity {
-  from { opacity: 0}
-  to   { opacity: 1}
-  from { margin-left: -100px}
-  to   { margin-left: 2.5%}
-  from { margin-right: 100px}
-  to   { margin-right: 0}
 }
