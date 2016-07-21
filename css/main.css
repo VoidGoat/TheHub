@@ -1,0 +1,12 @@
+body {
+  color: #2d3c49;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.text-thin {
+  font-weight: 300;
+}
+.text-bold {
+  font-weight: 700;
+}
